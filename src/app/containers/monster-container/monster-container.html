@@ -12,6 +12,8 @@
     <p>hit_dice: {{monster?.hit_dice}}</p>
     <ul>
       <p>stats</p>
+      {{monster?.skillChart | json}}
+      <pay-chart *ngIf="monster !== undefined" [chartData]="monster?.skillChart"></pay-chart>
       <li>strength: {{monster?.strength}}</li>
       <li>dexterity: {{monster?.dexterity}}</li>
       <li>constitution: {{monster?.constitution}}</li>

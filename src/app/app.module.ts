@@ -8,6 +8,8 @@ import { AppComponent } from './app.component';
 // containers
 import { MonsterContainer } from './containers/monster-container/monster-container';
 
+// components
+import { PayChart } from './components/pay-chart/pay-chart.component';
 
 // services
 import { ApiService } from './services/api.service';
@@ -16,7 +18,8 @@ import { AppRoutingModule } from './/app-routing.module';
 @NgModule({
   declarations: [
     AppComponent,
-    MonsterContainer
+    MonsterContainer,
+    PayChart
   ],
   imports: [
     BrowserModule,
