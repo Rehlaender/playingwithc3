@@ -1,0 +1,14 @@
+#pieChart .c3-chart-arc text {
+  fill: transparent;
+}
+
+#pieChart .c3-arc-strength {fill: rgba(178, 53, 53, 1) !important;}
+#pieChart > svg > g > g.c3-legend-item-strength > line {stroke: rgba(178, 53, 53, 1) !important;}
+#pieChart .c3-arc-dexterity {fill: rgba(136, 178, 53, 1) !important;}
+#pieChart > svg > g > g.c3-legend-item-dexterity > line {stroke: rgba(136, 178, 53, 1) !important;}
+#pieChart .c3-arc-wisdom {fill: rgba(53, 178, 136, 1) !important;}
+#pieChart > svg > g > g.c3-legend-item-wisdom > line {stroke: rgba(53, 178, 136, 1) !important;}
+#pieChart .c3-arc-intelligence {fill: rgba(53, 53, 178, 1) !important;}
+#pieChart > svg > g > g.c3-legend-item-intelligence > line {stroke: rgba(53, 53, 178, 1) !important;}
+#pieChart .c3-arc-constitution {fill: rgba(178, 53, 136, 1) !important;}
+#pieChart > svg > g > g.c3-legend-item-constitution > line {stroke: rgba(178, 53, 136, 1) !important;}

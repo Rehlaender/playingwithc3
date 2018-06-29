@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, OnChanges, SimpleChanges } from '@angular/core';
 import * as c3 from 'c3';
 
 @Component({
@@ -19,11 +19,16 @@ export class PayChart implements OnInit {
   constructor() {
   }
 
-  ngOnInit() {}
+  ngOnInit() { }
 
-  ngAfterViewInit() {
+  ngOnChanges(changes: SimpleChanges) {
+    if(changes.chartData.firstChange !== true) {
+      this.generateChart()
+    }
+  }
+  generateChart() {
     let chart = c3.generate({
-      bindto: '#chart',
+      bindto: '#pieChart',
       data: {
         columns: [
           this.chartData.strength,
@@ -35,6 +40,10 @@ export class PayChart implements OnInit {
         type : 'pie',
       }
     });
+  }
+
+  ngAfterViewInit() {
+    this.generateChart();
   }
 
 }
