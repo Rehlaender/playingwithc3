@@ -1,25 +1,28 @@
 <div class="monster-container">
+  <h2>bestairy</h2>
   <input type="text" [(ngModel)]="monsterId">
   <button (click)="getMonster(monsterId)"> search</button>
 
   <div class="monster" *ngIf="monster !== undefined">
-    size: <span>{{monster?.name}}</span>
-
+    <span>size:</span> <span>{{monster?.name}}</span>
     <p>type: {{monster?.type}}</p><p *ngIf="monster?.subtype">subtype: {{monster?.subtype}}</p>
     <p>alignment: {{monster?.alignment}}</p>
     <p>armor_class: {{monster?.armor_class}}</p>
     <p>hit_points: {{monster?.hit_points}}</p>
     <p>hit_dice: {{monster?.hit_dice}}</p>
     <div class="">
-      <p>stats</p>
-      <ul>
-        <li>strength: {{monster?.strength}}</li>
-        <li>dexterity: {{monster?.dexterity}}</li>
-        <li>constitution: {{monster?.constitution}}</li>
-        <li>intelligence: {{monster?.intelligence}}</li>
-        <li>wisdom: {{monster?.wisdom}}</li>
-      </ul>
-      <pay-chart *ngIf="monster !== undefined" [chartData]="monster?.skillChart"></pay-chart>
+      <div class="pieChart-container">
+        <div class="stats-list">
+          <ul>
+            <li class="strength">strength: {{monster?.strength}}</li>
+            <li class="dexterity">dexterity: {{monster?.dexterity}}</li>
+            <li class="constitution">constitution: {{monster?.constitution}}</li>
+            <li class="intelligence">intelligence: {{monster?.intelligence}}</li>
+            <li class="wisdom">wisdom: {{monster?.wisdom}}</li>
+          </ul>
+        </div>
+        <pay-chart *ngIf="monster !== undefined" [chartData]="monster?.skillChart"></pay-chart>
+      </div>
     </div>
   </div>
 </div>

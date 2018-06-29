@@ -1,0 +1,18 @@
+.pieChart-container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: fit-content;
+}
+
+.pieChart-container > .stats-list {
+  position: absolute;
+  z-index: 2;
+  background: rgba(0,0,0,0.6);
+}
+
+ul {
+  margin: 0px;
+}

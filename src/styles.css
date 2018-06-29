@@ -1,5 +1,42 @@
 /* You can add global styles to this file, and also import other style files */
 /*-- Chart --*/
+body {
+  font-family: 'Markazi Text', serif;
+  background: #000;
+  color: lightgray;
+  font-size: 1.2em;
+}
+
+p, div, input, button, span {
+  font-size: 1.2em;
+}
+
+p {
+  margin-bottom: 5px;
+  margin-top: 5px;
+
+}
+
+input[type=text] {
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid lightgray;
+    color: lightgray;
+}
+button {
+    background-color: transparent;
+    border: 1px lightgray;
+    color: lightgray;
+    padding: 5px 15px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+}
+
+button:focus, button:active, input[type=text]:focus, input[type=text]:active {
+  outline: none;
+}
+
 .c3 svg {
   font: 10px sans-serif;
   -webkit-tap-highlight-color: transparent; }
@@ -177,3 +214,9 @@
 
 .c3-chart-arc.c3-target.c3-focused g path {
   opacity: 1; }
+
+.strength { color: rgba(178, 53, 53, 1); }
+.dexterity { color: rgba(136, 178, 53, 1); }
+.constitution { color: rgba(53, 178, 136, 1); }
+.intelligence { color: rgba(53, 53, 178, 1); }
+.wisdom { color: rgba(178, 53, 136, 1); }

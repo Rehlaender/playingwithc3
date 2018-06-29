@@ -16,29 +16,41 @@ export class PayChart implements OnInit {
     wisdom: ['wisdom', 1],
   };
 
-  constructor() {
-  }
+  chart: any;
+  columns: any;
+  constructor() {}
 
-  ngOnInit() { }
+  ngOnInit() {
+    this.columns = Object.values(this.chartData).map(data => data);
+  }
 
   ngOnChanges(changes: SimpleChanges) {
     if(changes.chartData.firstChange !== true) {
       this.generateChart()
     }
   }
+
   generateChart() {
-    let chart = c3.generate({
+    this.chart = c3.generate({
       bindto: '#pieChart',
+      size: {
+        width: 300,
+        height: 300,
+      },
       data: {
-        columns: [
-          this.chartData.strength,
-          this.chartData.dexterity,
-          this.chartData.constitution,
-          this.chartData.intelligence,
-          this.chartData.wisdom
-        ],
+        columns: this.columns,
         type : 'pie',
-      }
+        labels: false,
+        onclick: function (d, i) { console.log('onclicko aiuda'); },
+        onmouseover: function (d, i) { console.log("onmouseover", d, i); },
+        onmouseout: function (d, i) { console.log("onmouseout", d, i); }
+      },
+      legend: {
+        show: false
+      },
+      tooltip: {
+        show: true
+      },
     });
   }
 
