@@ -7,19 +7,25 @@ import { AppComponent } from './app.component';
 
 // containers
 import { MonsterContainer } from './containers/monster-container/monster-container';
+import { IrisContainer } from './containers/iris-container/iris-container';
 
 // components
 import { PayChart } from './components/pay-chart/pay-chart.component';
+import { BarsGraphComponent } from './components/bars-graph/bars-graph.component';
 
 // services
 import { ApiService } from './services/api.service';
+import { IrisService } from './services/iris.service';
+
 import { AppRoutingModule } from './/app-routing.module';
 
 @NgModule({
   declarations: [
     AppComponent,
     MonsterContainer,
-    PayChart
+    IrisContainer,
+    PayChart,
+    BarsGraphComponent,
   ],
   imports: [
     BrowserModule,
@@ -28,7 +34,8 @@ import { AppRoutingModule } from './/app-routing.module';
     FormsModule
   ],
   providers: [
-    ApiService
+    ApiService,
+    IrisService,
   ],
   bootstrap: [AppComponent]
 })

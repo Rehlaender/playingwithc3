@@ -1,6 +1,6 @@
 <div class="monster-container">
   <h2>bestairy</h2>
-  <input type="text" [(ngModel)]="monsterId">
+  <input type="text" [(ngModel)]="monsterId" placeholder="search a monster by id">
   <button (click)="getMonster(monsterId)"> search</button>
 
   <div class="monster" *ngIf="monster !== undefined">
