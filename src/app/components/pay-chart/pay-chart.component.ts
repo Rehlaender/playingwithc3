@@ -1,5 +1,6 @@
 import { Component, OnInit, Input, OnChanges, SimpleChanges } from '@angular/core';
 import * as c3 from 'c3';
+import * as d3 from 'd3';
 
 @Component({
   selector: 'pay-chart',
@@ -40,10 +41,14 @@ export class PayChart implements OnInit {
       data: {
         columns: this.columns,
         type : 'pie',
-        labels: false,
-        onclick: function (d, i) { console.log('onclicko aiuda'); },
-        onmouseover: function (d, i) { console.log("onmouseover", d, i); },
-        onmouseout: function (d, i) { console.log("onmouseout", d, i); }
+        // labels: false,
+      },
+      pie: {
+        label: {
+          format: function(value, ratio, id) {
+            return d3.format('%')(ratio)
+          }
+        }
       },
       legend: {
         show: false

@@ -1,11 +1,12 @@
 <div class="monster-container">
   <h2>bestairy</h2>
-  <input type="text" [(ngModel)]="monsterId" placeholder="search a monster by id">
+  <input style="width: 100%;" type="text" [(ngModel)]="monsterId" placeholder="search a monster by id">
   <button (click)="getMonster(monsterId)"> search</button>
 
   <div class="monster" *ngIf="monster !== undefined">
-    <span>size:</span> <span>{{monster?.name}}</span>
-    <p>type: {{monster?.type}}</p><p *ngIf="monster?.subtype">subtype: {{monster?.subtype}}</p>
+    <p>name: {{monster?.name}}</p>
+    <p>size: {{monster?.size}}</p> 
+    <p>type: {{monster?.type}}</p> <p *ngIf="monster?.subtype">subtype: {{monster?.subtype}}</p>
     <p>alignment: {{monster?.alignment}}</p>
     <p>armor_class: {{monster?.armor_class}}</p>
     <p>hit_points: {{monster?.hit_points}}</p>

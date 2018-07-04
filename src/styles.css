@@ -4,7 +4,7 @@ body {
   font-family: 'Markazi Text', serif;
   background: #000;
   color: lightgray;
-  font-size: 1.2em;
+  font-size: 1em;
 }
 
 p, div, input, button, span {
@@ -25,7 +25,7 @@ input[type=text] {
 }
 button {
     background-color: transparent;
-    border: 1px lightgray;
+    border: 1px lightgray solid;
     color: lightgray;
     padding: 5px 15px;
     text-align: center;
@@ -37,9 +37,15 @@ button:focus, button:active, input[type=text]:focus, input[type=text]:active {
   outline: none;
 }
 
+button:focus, button:active {
+  background: lightgray;
+  color: black;
+}
+
 .c3 svg {
   font: 10px sans-serif;
-  -webkit-tap-highlight-color: transparent; }
+  -webkit-tap-highlight-color: white;
+}
 
 .c3 path, .c3 line {
   fill: none;

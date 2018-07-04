@@ -1,5 +1,5 @@
 #pieChart .c3-chart-arc text {
-  fill: transparent;
+  fill: white;
 }
 
 #pieChart .c3-arc-strength {fill: rgba(178, 53, 53, 1) !important;}
