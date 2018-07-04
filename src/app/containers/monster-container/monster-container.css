@@ -21,3 +21,23 @@
 ul {
   margin: 0px;
 }
+
+.Fine {font-size: 0.5em}
+.Diminutive {font-size: 0.6em}
+.Tiny {font-size: 0.7em}
+.Small {font-size: 0.8em}
+.Medium {font-size: 1.2em}
+.Large {font-size: 1.6em}
+.Huge {font-size: 1.8em}
+.Gargantuan {font-size: 2em}
+.Colossal, .Colossal+ {font-size: 2.5em}
+
+.lawful.good {color: #87ceeb}
+.neutral.good {color: #eeebd9}
+.chaotic.good {color: #ce2029}
+.lawful.neutral {color: #0f52ba}
+.true.neutral {color: #e6d7df}
+.chaotic.neutral {color: #9b111e}
+.lawful.evil {color: #3b3d64}
+.neutral.evil {color: #6c6874}
+.chaotic.evil {color: #662228}

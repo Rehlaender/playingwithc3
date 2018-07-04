@@ -21,6 +21,10 @@ export class MonsterContainer implements OnInit {
     });
   }
 
+  returnSizeAsClass(monster) {
+
+  }
+
   genereateMonsterArrays(data) {
     const skill = {};
     Object.keys(data).map(key => {
