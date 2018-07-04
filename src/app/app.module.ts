@@ -12,6 +12,8 @@ import { IrisContainer } from './containers/iris-container/iris-container';
 // components
 import { PayChart } from './components/pay-chart/pay-chart.component';
 import { BarsGraphComponent } from './components/bars-graph/bars-graph.component';
+import { DynamicSearchComponent } from './components/dynamic-search/dynamic-search.component';
+
 
 // services
 import { ApiService } from './services/api.service';
@@ -26,6 +28,7 @@ import { AppRoutingModule } from './/app-routing.module';
     IrisContainer,
     PayChart,
     BarsGraphComponent,
+    DynamicSearchComponent,
   ],
   imports: [
     BrowserModule,

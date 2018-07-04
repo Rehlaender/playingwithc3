@@ -17,7 +17,7 @@ p {
 
 }
 
-input[type=text] {
+input {
     background: transparent;
     border: none;
     border-bottom: 1px solid lightgray;
@@ -31,9 +31,10 @@ button {
     text-align: center;
     text-decoration: none;
     display: inline-block;
+    font-size: 0.5em;
 }
 
-button:focus, button:active, input[type=text]:focus, input[type=text]:active {
+button:focus, button:active, input:focus, input:active {
   outline: none;
 }
 

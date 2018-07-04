@@ -1,7 +1,7 @@
 <div class="monster-container">
   <h2>bestairy</h2>
-  <input style="width: 100%;" type="text" [(ngModel)]="monsterId" placeholder="search a monster by id">
-  <button (click)="getMonster(monsterId)"> search</button>
+  
+  <dynamic-search (sendMonsterData)="getMonsterData($event)"></dynamic-search>
 
   <div class="monster" *ngIf="monster !== undefined">
     <p>name: {{monster?.name}}</p>

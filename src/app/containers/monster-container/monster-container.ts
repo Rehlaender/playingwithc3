@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnChanges, SimpleChanges } from '@angular/core';
 import { ApiService } from '../../services/api.service';
 
 @Component({
@@ -21,8 +21,9 @@ export class MonsterContainer implements OnInit {
     });
   }
 
-  returnSizeAsClass(monster) {
-
+  getMonsterData(data) {
+    this.monster = data;
+    this.monster.skillChart = this.genereateMonsterArrays(data);
   }
 
   genereateMonsterArrays(data) {
@@ -45,5 +46,9 @@ export class MonsterContainer implements OnInit {
 
   ngOnInit() {
     console.log('hi');
+  }
+
+  ngOnChanges(changes: SimpleChanges) {
+    console.log(changes, 'asdfu');
   }
 }

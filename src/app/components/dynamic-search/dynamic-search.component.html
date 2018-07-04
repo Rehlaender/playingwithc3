@@ -1,0 +1,30 @@
+<div class="" *ngIf="!userIsSearching; else userReallySearch">
+  searchBy:
+  <button (click)="willSearchBy('id')" type="button" name="button">by id</button>
+  <button (click)="willSearchBy('name')" type="button" name="button">by name</button>
+</div>
+
+<ng-template #userReallySearch class="">
+
+  <div class="dynamicContainer">
+
+    <button className="resetButtno"
+    (click)="resetModel()" type="button" name="button">x</button>
+
+    <input *ngIf="searchBy === 'id'" type="number" class="dynamicInput"
+    placeholder="start typing monster id"
+    (keyup.enter)="resetModel()"
+    (keyup.enter)="resetModel()"
+    [(ngModel)]="searchValue"  (ngModelChange)="idModelChanged($event)"/>
+
+    <input *ngIf="searchBy === 'name'" type="text" class="dynamicInput"
+    placeholder="start typing monster name"
+    (keyup.enter)="resetModel()"
+    [(ngModel)]="searchValue"  (ngModelChange)="nameModelChanged($event)"/>
+
+  </div>
+
+  <span class="searchWarning">press the X button or press the
+    enter key to stop searching</span>
+
+</ng-template>
