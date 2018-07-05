@@ -32,7 +32,7 @@ export class ApiService {
     const monsterRouteByName = `${this.apiRoot}monsters/?name=${name}`;
     return this._http.get(monsterRouteByName)
     .pipe(
-      catchError([])
+      catchError(null)
     );
   }
 }
