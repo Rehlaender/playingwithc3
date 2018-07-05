@@ -10,7 +10,7 @@ import { ApiService } from '../../services/api.service';
 export class DynamicSearchComponent implements OnInit {
 
   searchValue: any;
-  searchResults: Array<any>;
+  searchResults: any;
   userIsSearching: any = false;
   searchBy: any = 'id';
 
@@ -48,7 +48,7 @@ export class DynamicSearchComponent implements OnInit {
   searchThis(url) {
     // this.resetModel();
     this._apiService.searchMonsterByUrl(url).subscribe(
-      data => this.sendMonsterData.emit(data);
+      data => {this.sendMonsterData.emit(data)}
     );
   }
 

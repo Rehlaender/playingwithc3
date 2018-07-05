@@ -14,12 +14,7 @@ export class MonsterContainer implements OnInit {
     private _api: ApiService
   ) {}
 
-  getMonster(id) {
-    this._api.getMonsterById(id).subscribe(data => {
-      this.monster = data;
-      this.monster.skillChart = this.genereateMonsterArrays(data);
-    });
-  }
+  ngOnInit() {}
 
   getMonsterData(data) {
     this.monster = data;
@@ -42,13 +37,5 @@ export class MonsterContainer implements OnInit {
       }
     });
     return skill;
-  }
-
-  ngOnInit() {
-    console.log('hi');
-  }
-
-  ngOnChanges(changes: SimpleChanges) {
-    console.log(changes, 'asdfu');
   }
 }
