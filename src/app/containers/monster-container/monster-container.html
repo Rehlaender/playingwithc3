@@ -1,17 +1,21 @@
 <div class="monster-container">
   <h2>bestairy</h2>
-  
+
   <dynamic-search (sendMonsterData)="getMonsterData($event)"></dynamic-search>
 
   <div class="monster" *ngIf="monster !== undefined">
-    <p>name: {{monster?.name}}</p>
-    <p>size: <span [ngClass]="monster?.size">{{monster?.size}}</span></p>
-    <p>type: {{monster?.type}}</p> <p *ngIf="monster?.subtype">subtype: {{monster?.subtype}}</p>
-    <p>alignment: <span [ngClass]="monster?.alignment">{{monster?.alignment}}</span></p>
-    <p>armor_class: {{monster?.armor_class}}</p>
-    <p>hit_points: {{monster?.hit_points}}</p>
-    <p>hit_dice: {{monster?.hit_dice}}</p>
-    <div class="">
+    <div [ngClass]="{active: activeView === 'info'}"class="monster-item active" #monsterInfo>
+      <strong><p>info:</p></strong>
+      <p>name: {{monster?.name}}</p>
+      <p>size: <span [ngClass]="monster?.size">{{monster?.size}}</span></p>
+      <p>type: {{monster?.type}}</p> <p *ngIf="monster?.subtype">subtype: {{monster?.subtype}}</p>
+      <p>alignment: <span [ngClass]="monster?.alignment">{{monster?.alignment}}</span></p>
+      <p>armor_class: {{monster?.armor_class}}</p>
+      <p>hit_points: {{monster?.hit_points}}</p>
+      <p>hit_dice: {{monster?.hit_dice}}</p>
+    </div>
+    <div [ngClass]="{active: activeView === 'status'}"class="monster-item" #monsterStatus>
+      <strong><p>stats:</p></strong>
       <div class="pieChart-container">
         <div class="stats-list">
           <ul>
@@ -25,5 +29,17 @@
         <pay-chart *ngIf="monster !== undefined" [chartData]="monster?.skillChart"></pay-chart>
       </div>
     </div>
+    <div [ngClass]="{active: activeView === 'image'}"class="monster-item" #monsterImage>
+      <strong><p>image:</p></strong>
+      <img style="width: 100%; height: auto;" src="http://via.placeholder.com/310x150" alt="">
+    </div>
+
+    <div class="dots">
+      <div (click)="setActive('info')" class="dot active"></div>
+      <div (click)="setActive('status')" class="dot"></div>
+      <div (click)="setActive('image')" class="dot"></div>
+    </div>
+
   </div>
+
 </div>
